@@ -1,0 +1,56 @@
+<div class="form__container">
+  <form
+    class="form__body"
+    #loginForm="ngForm"
+    (ngSubmit)="onSubmit(loginForm)"
+    [noValidate]="false"
+  >
+    <h1 class="form__headingText">Log In</h1>
+    <!-- <div className={`${styles.display__errorMessage} ${ displayMessage.length < 1 ? styles.empty : "" }`}>
+      {displayMessage.length > 1 ? (
+      <span>
+        <img src={warningIcon} alt="warning icon" />
+      </span>
+      ) : null}
+      <p>{displayMessage}</p>
+    </div> -->
+    <div class="form__group">
+      <label htmlFor="email">
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          required
+          [(ngModel)]="email"
+          name="email"
+        />
+      </label>
+    </div>
+
+    <div class="form__group">
+      <label htmlFor="password">
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+          [(ngModel)]="password"
+          name="password"
+        />
+      </label>
+    </div>
+
+    <div class="form__actionSection">
+      <button>
+        <span class="spinner__wrapper" *ngIf="loading">
+          <img src="assets/loading.svg" alt="button spinner" class="spinner" />
+        </span>
+        <span class="button__text">LOG IN</span>
+      </button>
+      <p>
+        Don't have an account?
+        <a [routerLink]="['/register']">Create account</a>
+      </p>
+    </div>
+  </form>
+</div>

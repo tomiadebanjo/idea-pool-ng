@@ -1,0 +1,23 @@
+<div class="dashboard">
+  <div class="dashboard__header">
+    <h2 class="dashboard__headerText">My Ideas</h2>
+    <div
+      class="dashboard__headerIcon"
+      role="button"
+      tabIndex="0"
+      (click)="toggleShowCreate()"
+    >
+      <img src="assets/add_icon.png" alt="create icon" />
+    </div>
+  </div>
+
+  <div class="dashboard__noIdeaSection" *ngIf="!showCreate">
+    <div class="dashboard__bulbIcon">
+      <img src="assets/bulb.png" alt="bulb icon" />
+    </div>
+
+    <p>Got Ideas?</p>
+  </div>
+
+  <app-idea-table *ngIf="showCreate"></app-idea-table>
+</div>
